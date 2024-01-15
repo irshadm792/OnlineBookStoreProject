@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<style>
+    body{
+        height: 100vh;
+        background-image: url(/Image/BookStoreImg2.webp);
+    }
+
+</style>
+<script>
+    function VerifyPassword(){
+        var password = document.getElementById("txtpwd").value;
+        var regExp=/(?=.*[A-Z])\w{4,15}/;
+        var pwdError =document.getElementById("txtError");
+        
+        if(password.match(regExp)){
+            pwdError.innerHTML="Strong Password".fontcolor('green');
+        }else{
+            pwdError.innerHTML="WeakPassword".fontcolor('red');
+        }  
+    }
+    function ConformPassword(){
+        var password = document.getElementById("txtpwd").value;
+        var password1=document.getElementById("conformpwd").value;
+        var pwdError1=document.getElementById("txtError1");
+        if(password==password1){
+            pwdError1.innerHTML="PassWord Match".fontcolor("green");
+
+        }else{
+            pwd.erro1.innerHTML="PassWord Do not Match".fontcolor("red");
+        }
+    }
+</script>
+<body class="container-fluid d-flex justify-content-center align-items-center form-control-sm">
+    <form action="UserRegister" method="post" class="w-25 border border-1 rounded-2 p-4" >
+        <dl>
+            <h3 >Create Account</h3>
+            <dt >User Name</dt>
+            <dd> <input type="text"name="uname" class="form-control"></dd>
+            <dt >Password</dt>
+            <dd><input type="password" name="pword" class="form-control" id="txtpwd" onkeyup="VerifyPassword()"></dd>
+            <dd id="txtError"></dd>
+            <dt >First Name </dt>
+            <dd><input type="text" name="fname" class="form-control"></dd>
+            <dt >Last Name</dt>
+            <dd><input type="text" name="lname" class="form-control"></dd>
+            <dt>Adress</dt>
+            <dd><input type="text" name="addr" class="form-control"></dd>
+            <dt >Email</dt>
+            <dd><input type="email" name="mid" class="form-control"></dd>
+            <dt >Phone No</dt>
+            <dd><input type="text" name="phno" class="form-control"></dd>
+            <span><input type="submit" value="Register" class="form-control bg-warning mt-3"></span>
+            <p class="mt-5 ">Already Have Accounts?<span><a href="CustomerLogin.html">Login</a></span></p>
+            
+        </dl>
+    </form>
+</body>
+</html>
